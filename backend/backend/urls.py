@@ -20,5 +20,4 @@ from .views import health_check, cache_view
 
 urlpatterns = [
     path('', health_check, name='health_check'),
-    path('cache/', cache_view, name='cache_view'),
 ]
