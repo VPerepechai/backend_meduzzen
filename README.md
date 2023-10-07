@@ -40,6 +40,7 @@ The first thing to do is to clone the repository:
 $ git clone https://github.com/VPerepechai/backend_meduzzen
 $ cd backend_meduzzen/backend
 ```
+Create an .env file in /backend directory. Copy the contents of .env.sample and fill in depending on your variables.
 
 Before running the container, you need to create an image
 ```sh

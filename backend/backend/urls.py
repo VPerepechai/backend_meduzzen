@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import health_check
+from .views import health_check, cache_view
 
 urlpatterns = [
     path('', health_check, name='health_check'),
