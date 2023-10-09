@@ -33,6 +33,16 @@ To run the project:
 ```
 And navigate to `http://127.0.0.1:8000/`.
 
+To make migrations:
+```sh
+(env)$ python manage.py makemigrations
+```
+To apply migrations:
+```sh
+(env)$ python manage.py migrate
+```
+
+
 ## Launch the app within Docker
 
 The first thing to do is to clone the repository:
@@ -60,7 +70,16 @@ And navigate to `http://127.0.0.1:8000/`.
 
 To check the operation of containers:
 ```sh
-$ docker-compose logs -f
+$ docker-compose --env-file backend/.env logs -f
+```
+
+To make migrations:
+```sh
+$ docker-compose --env-file backend/.env exec web python manage.py makemigrations
+```
+To apply migrations:
+```sh
+$ docker-compose --env-file backend/.env exec web python manage.py migrate
 ```
 
 To disable containers:
