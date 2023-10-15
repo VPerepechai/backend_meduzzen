@@ -20,16 +20,19 @@ DEBUG = env('DEBUG', default=False)
 
 ALLOWED_HOSTS = env("DJANGO_ALLOWED_HOSTS").split(" ")
 
+AUTH_USER_MODEL = 'users.User'
 
 # Application definition
 
 INSTALLED_APPS = [
+    "users.apps.UsersConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -41,6 +44,12 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny'
+    ]
+}
 
 ROOT_URLCONF = "backend.urls"
 

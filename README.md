@@ -37,11 +37,18 @@ To make migrations:
 ```sh
 (env)$ python manage.py makemigrations
 ```
+To make migrations for users application:
+```sh
+(env)$ python manage.py makemigrations users
+```
 To apply migrations:
 ```sh
 (env)$ python manage.py migrate
 ```
-
+To сreate super user:
+```sh
+(env)$ python manage.py createsuperuser
+```
 
 ## Launch the app within Docker
 
@@ -77,9 +84,17 @@ To make migrations:
 ```sh
 $ docker-compose --env-file backend/.env exec web python manage.py makemigrations
 ```
+To make migrations for users application:
+```sh
+$ docker-compose --env-file backend/.env exec web python manage.py makemigrations users
+```
 To apply migrations:
 ```sh
 $ docker-compose --env-file backend/.env exec web python manage.py migrate
+```
+To сreate super user:
+```sh
+$ docker-compose --env-file backend/.env exec web python manage.py createsuperuser
 ```
 
 To disable containers:
