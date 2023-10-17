@@ -27,4 +27,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', health_check, name='health_check'),
     path('', include(router.urls)),
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.jwt')),
 ]
