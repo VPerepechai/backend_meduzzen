@@ -1,4 +1,5 @@
-from rest_framework import viewsets, filters
+from rest_framework import filters, viewsets
+
 from .models import User
 from .serializer import UserSerializer
 
