@@ -65,8 +65,9 @@ jobs:
 
       - name: Run migrations and tests
         run: |
-          python backend/manage.py migrate
-          python backend/manage.py test
+          cd backend
+          python manage.py migrate
+          python manage.py test
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
           DEBUG: ${{ secrets.DEBUG }}
